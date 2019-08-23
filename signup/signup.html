@@ -1,0 +1,131 @@
+<!--WRITEN BY D RAKESH(2018IS04) FOR THE SIGN UP FORM-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Registration | Knect</title>
+	<?php session_destroy();?>
+	
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--=
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #999999;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+				<form name="myform" class="login100-form validate-form" action="register.php" method="GET" onsubmit="return validate()">
+					<span class="login100-form-title p-b-59" style="text-align: center;">
+                        <img src="images/icons/8250f5aa9c.png" height="35px" width="35px" >
+						Sign Up
+					</span>
+
+					<div class="wrap-input100 validate-input">
+						<span class="label-input100 ">Full Name</span>
+						<input class="input100" type="text" name="fullname" placeholder="Name...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="email" name="email" placeholder="Email addess...">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Username...">
+						<span class="focus-input100"></span>
+					</div>
+					
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+						<span class="label-input100">Repeat Password</span>
+						<input class="input100" type="password" name="repass" placeholder="*************">
+						<span class="focus-input100"></span>
+					</div>
+					
+						
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Phone no</span>
+						<input class="input100" type="number" name="phone" placeholder="Phoneno...">
+						<span class="focus-input100"></span>
+					</div>
+					
+						
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Gender</span> &nbsp;
+						<input type="radio" name="gender" value="male"><span class="label-input100" style="font-weight: 100;">male</span>
+						<input type="radio" name="gender" value="female"><span class="label-input100" style="font-weight: 100;">female</span>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn" >
+							
+							<input  type="submit" value="sign up" class="login100-form-btn">
+							
+							
+						</div>
+                            
+					</div>
+                    <div class=" validate-input " style="text-align: center;" >
+                                Already User ?
+						<a href="../Tlogin/login.php"  style="text-decoration: none;" class="nt">
+							Sign in
+						</a>
+                        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+<!--===============================================================================================-->
+<script>
+function validate(){
+var fname=document.getElementsByName("fullname")[0].value;
+var uname=document.getElementsByName("username")[0].value;
+var email=document.getElementsByName("email")[0].value;
+var password=document.getElementsByName("pass")[0].value;
+var repass=document.getElementsByName("repass")[0].value;
+var phone=document.getElementsByName("phone")[0].value;
+//var gender=document.getElementsByName("gender")[0].value;
+ //var gender = form.querySelectorAll('input[name="gender"]:checked');
+
+if((fname!="") && (uname!="") && (email!="") && (password!="") && (phone!="") && (repass!="")){
+
+if(password==repass){
+return true;
+}
+else {
+alert("password mismatch!");
+return false;
+}
+}
+else {
+alert("Enter all the feilds!")
+return false;
+}
+}
+
+</script>
+
+
+</body>
+</html>
